@@ -1,4 +1,19 @@
-# Any-Language Wordle Clone
+# Hydrology Wordle Clone
+
+## Hydrology Version of Any-Language Wordle Clone
+
+Thanks to great work by many others I put together a Hydrology Wordle Clone. The "words" are Northwest River Forecast Center Station IDs: https://www.nwrfc.noaa.gov/river/river_summary.php?sort=s2&ss=*
+I followed Aidan's excellent blog post: https://blog.mothertongues.org/wordle/ 
+
+_Summary of changes_
+
+- "orthography.ts" 
+- "validGuesses.ts"
+- "wordlist.ts"
+- "config.ts"
+- "keyboard.ts"
+
+The rest of this README.md is from Aidan's repo: https://github.com/roedoejet/AnyLanguage-Wordle
 
 ## Changes in this fork
 
