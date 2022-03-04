@@ -2,7 +2,8 @@
 
 ## Hydrology Version of Any-Language Wordle Clone
 
-Thanks to great work by many others I put together a Hydrology Wordle Clone. The "words" are Northwest River Forecast Center Station IDs: https://www.nwrfc.noaa.gov/river/river_summary.php?sort=s2&ss=*
+Thanks to great work by many others I put together a Hydrology Wordle Clone. The "words" are Northwest River Forecast Center Station IDs: https://www.nwrfc.noaa.gov/river/river_summary.php?sort=s2&ss=
+
 I followed Aidan's excellent blog post: https://blog.mothertongues.org/wordle/ 
 
 _Summary of changes_
