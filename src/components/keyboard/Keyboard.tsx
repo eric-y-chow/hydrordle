@@ -39,6 +39,9 @@ export const Keyboard = ({ onChar, onDelete, onEnter, guesses }: Props) => {
         if (key.length === 1 && key >= 'A' && key <= 'Z') {
           onChar(key)
         }
+        if (key.length === 1 && key >= '1' && key <= '8') {
+          onChar(key)
+        }
       }
     }
     window.addEventListener('keyup', listener)

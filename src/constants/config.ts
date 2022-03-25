@@ -3,9 +3,9 @@ export const CONFIG = {
   language: 'Hydrordle', // This changes the display name for your language
   wordLength: 5, // This sets how long each word is based on how many characters (as defined in orthography.ts) are in each word
   author: 'Eric Chow', // Put your name here so people know who made this Wordle!
-  authorWebsite: 'eric.y.chow@usace.army.mil', // Put a link to your website or social media here
+  authorWebsite: 'https://github.com/eric-y-chow', // Put a link to your website or social media here
   wordListSource: 'NWRFC Select Stations', // Describe the source material for your words here
-  wordListSourceLink: 'https://www.nwrfc.noaa.gov/river/river_summary.php?sort=s2&ss=*', // Put a link to the source material for your words here
+  wordListSourceLink: 'https://www.nwrfc.noaa.gov/river/river_summary.php', // Put a link to the source material for your words here
   //
   // THESE NEXT SETTINGS ARE FOR ADVANCED USERS
   //
