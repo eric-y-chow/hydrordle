@@ -23,6 +23,9 @@ import '@bcgov/bc-sans/css/BCSans.css'
 import './i18n'
 import { withTranslation, WithTranslation } from 'react-i18next'
 
+import { AlertContainer } from './components/alerts/AlertContainer'
+import { useAlert } from './context/AlertContext'
+
 const ALERT_TIME_MS = 2000
 
 const App: React.FC<WithTranslation> = ({ t, i18n }) => {
@@ -34,6 +37,7 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isI18nModalOpen, setIsI18nModalOpen] = useState(false)
   const [isWordNotFoundAlertOpen, setIsWordNotFoundAlertOpen] = useState(false)
+  const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [successAlert, setSuccessAlert] = useState('')
   const [guesses, setGuesses] = useState<string[][]>(() => {
@@ -60,6 +64,10 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
     ReactGA.pageview(window.location.pathname)
   }
   const [stats, setStats] = useState(() => loadStats())
+
+  const clearCurrentRowClass = () => {
+    setCurrentRowClass('')
+  }
 
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution })
@@ -101,10 +109,13 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
     if (isGameWon || isGameLost) {
       return
     }
+
     if (!(currentGuess.length === CONFIG.wordLength)) {
       setIsNotEnoughLetters(true)
+      setCurrentRowClass('jiggle')
       return setTimeout(() => {
         setIsNotEnoughLetters(false)
+        onClose: clearCurrentRowClass
       }, ALERT_TIME_MS)
     }
 
@@ -148,9 +159,7 @@ const App: React.FC<WithTranslation> = ({ t, i18n }) => {
   return (
     <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div className="flex w-80 mx-auto items-center mb-8">
-        <h1 className="text-xl grow font-bold">
-          Not Wordle - {CONFIG.language}
-        </h1>
+        <h1 className="text-xl grow font-bold">{CONFIG.language}</h1>
         {translateElement}
         <InformationCircleIcon
           className="h-6 w-6 cursor-pointer"

@@ -16,3 +16,6 @@ export const CONFIG = {
   defaultLang: 'en', // the default interface language
   availableLangs: ['en', 'es'], // the options available to the user for translation languages
 }
+
+export const ALERT_TIME_MS = 2000
+export const REVEAL_TIME_MS = 350
